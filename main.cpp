@@ -1,4 +1,5 @@
 #include "mbed.h"
+#include <cstdint>
 
 AnalogOut Aout(D7);
 AnalogIn Ain(A0);
@@ -71,9 +72,8 @@ int main()
 {
     while (true) {
         for (i = 0; i < sample; i++){
-            Aout.write_u16((data[i])/5 * 0x7FFF);
-            printf("%f\r\n", data[i]);
-            wait_ns(1);
+            Aout.write_u16((uint16_t)((data[i])/5 * 0x7FFF));
+            //printf("%f\r\n", data[i]);
         }
     }
 }
