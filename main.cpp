@@ -72,7 +72,7 @@ int main()
 {
     uint16_t data[361];
     for (i = 0; i < sample; i++){
-            data[i] = (uint16_t)((raw_data[i])/3 * 0xFFFF);
+            data[i] = (uint16_t)((raw_data[i])/3.3 * 0xFFFF);
     }
     while (true) {
         for (i = 0; i < sample; i++) {
